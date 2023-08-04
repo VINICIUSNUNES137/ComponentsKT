@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.componentes.login.screen
+package br.senai.sp.jandira.componentes.perfil.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,32 +16,36 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import br.senai.sp.jandira.componentes.login.components.Form
-import br.senai.sp.jandira.componentes.login.components.Header
+import br.senai.sp.jandira.componentes.menu.screen.MenuScreen
+
+
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun PerfilScreen(navController: NavController, nome: String) {
     Column (modifier = Modifier
         .fillMaxSize()
-        .background(Color(217, 52, 93))
+        .background(Color(83, 157, 111))
         .padding(top = 32.dp)
         .width(200.dp),
         horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
-        Text(text = "LOGIN", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold, modifier = Modifier.width(200.dp))
+        Text(text = "PERFIL - $nome", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold, modifier = Modifier.width(200.dp))
         Spacer(modifier = Modifier.height(200.dp))
         Button(onClick = { navController.navigate("menu") }, colors = ButtonDefaults.buttonColors(Color.White), modifier = Modifier
             .width(200.dp)
             .height(50.dp),
             shape = RoundedCornerShape(16.dp)
-            ) {
-            Text(text = "Entrar", fontWeight = FontWeight.Bold, color = Color.Blue, fontSize = 24.sp)
+        ) {
+            Text(text = "Voltar", fontWeight = FontWeight.Bold, color = Color.Blue, fontSize = 24.sp)
         }
+        Spacer(modifier = Modifier.height(200.dp))
+
     }
 }
 
 //@Preview(showSystemUi = true, showBackground = true)
 //@Composable
-//fun LoginScreenPreview() {
-//    LoginScreen()
+//fun PerfilScreenPreview() {
+//    PerfilScreen(nav)
 //}
